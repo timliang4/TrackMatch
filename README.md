@@ -2,7 +2,7 @@
 
 > Web App for discovering relationships between Spotify tracks.
 
-Try it out: <a href="https://timliang4.github.io/TrackMatch/" target="blank_">Website</a>
+Try it out: <a href="https://timliang4.github.io/TrackMatch/" target="_blank">Website</a>
 
 ## Code
 
