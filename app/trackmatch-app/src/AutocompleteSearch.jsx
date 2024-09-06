@@ -16,9 +16,24 @@ async function getSearchData(search) {
   }
 }
 
+async function getRecommendations(search) {
+  try {
+      const response = await fetch(`https://trackmatchapi.com/music?track=${search}`);
+      if (!response.ok) {
+        throw new Error(`Response status: ${response.status}`);
+      }
+      const result = await response.json();
+      return result["recommendations"]
+  } catch (error) {
+      console.error(error.message);
+  }
+}
+
 const AutocompleteSearch = () => {
   const [value, setValue] = useState('');
   const [suggestions, setSuggestions] = useState([]);
+  const [results, setResult] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const onSuggestionsFetchRequested = ({ value }) => {
     getSearchData(value)
@@ -53,18 +68,29 @@ const AutocompleteSearch = () => {
     suggestionsContainer: 'suggestions-container',
     suggestion: 'suggestion',
     suggestionHighlighted: 'suggestion-highlighted',
-    input: 'autocomplete-input'
+    input: 'autocomplete-input',
+    suggestionsList: 'suggestions-list'
   };
 
   return (
-    <Autosuggest
-      suggestions={suggestions}
-      onSuggestionsFetchRequested={onSuggestionsFetchRequested}
-      onSuggestionsClearRequested={onSuggestionsClearRequested}
-      getSuggestionValue={getSuggestionValue}
-      renderSuggestion={renderSuggestion}
-      inputProps={inputProps}
-    />
+    <>
+      <Autosuggest
+        suggestions={suggestions}
+        onSuggestionsFetchRequested={onSuggestionsFetchRequested}
+        onSuggestionsClearRequested={onSuggestionsClearRequested}
+        getSuggestionValue={getSuggestionValue}
+        renderSuggestion={renderSuggestion}
+        inputProps={inputProps}
+        theme={theme}
+      />
+      <button id="submit" onClick={() => 
+      {setIsLoading(true); getRecommendations(value).then((data) => {setResult(data); setIsLoading(false)}).catch((e) => {console.log(e); setResult([])})}}>Submit</button>
+      {(isLoading) ? <div id="loader"></div> : results.map(result => 
+        <div key={result.uri} className="recommendation-list">
+          Recommendations for by <a href={`https://open.spotify.com/track/${result.uri}`} target="_blank">{result.name} by {result.artist}</a>
+          {result.recommendations.map(song => <div key={song.uri} className="recommendation">{song.frequency} Connections: <a href={`https://open.spotify.com/track/${song.uri}`} target="_blank">{song.name} by {song.artist}</a></div>)}
+        </div>)}
+    </>
   );
 };
 
