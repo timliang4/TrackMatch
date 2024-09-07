@@ -4,18 +4,23 @@
 
 ## Website
 
-Try it out: <a href="https://timliang4.github.io/TrackMatch/" target="_blank">timliang4.github.io/TrackMatch/</a>
+Try it out: <a href="https://trackmatcher.netlify.app/" target="_blank">trackmatcher.netlify.app/</a>
 
 ## Code
 
-The ```recommendation_model.ipynb``` notebook in the ```model``` folder provides an in-depth explanation of how the data was loaded and how recommendation relationships between Spotify tracks were modeled using Graph Theory.
+The `recommendation_model.ipynb` notebook in the `model` folder provides an in-depth explanation of how the data was loaded and how recommendation relationships between Spotify tracks were modeled using Graph Theory.
 
-The ```api``` folder contains code for the Flask web API, which inferfaces with a SQL database. This API was deployed using AWS Elastic Beanstalk and RDS.
+The `api` folder contains code for the Flask web API, which inferfaces with a SQL database. This API was deployed using AWS Elastic Beanstalk and RDS.
 
-Finally, the ```docs``` folder includes code for a static webpage that allows users to search for tracks and retrieve recommendations.
+The `docs` folder contains an old static webpage this site used. It is now deployed on Netlify as a Vite and React app.
 
-## Support
+## Features I chose to include
 
-Encounter an issue?
+- A search box with autosuggestions (React component) to easily find songs in the database
+- Interface with TrackMatch API (made by me earlier this summer) to fetch recommendations
+- Dynamic sizing for mobile applications
+- Publicly deployed on Netlify
 
-If you find a bug or have a feature request, please file an issue or email me at timliang4@gmail.com. Or, if you'd like to contribute, feel free to submit a pull request.
+## Time Spent
+
+I spent around 5 hours creating the Vite + React app and publicly deploying it.
