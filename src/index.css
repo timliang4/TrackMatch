@@ -135,11 +135,15 @@ a:hover {
 /* small devices */
 @media only screen and (max-width: 768px) {
   #all {width: 100%}
+  #submit {width: 25%}
+  .autocomplete-container {width: 75%}
 } 
 
 /* medium devices */
 @media only screen and (min-width: 768px) {
   #all {width: 70%}
+  #submit {width: 15%}
+  .autocomplete-container {width: 85%}
 }
 
 /* large devices */
