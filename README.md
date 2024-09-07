@@ -6,13 +6,11 @@
 
 Try it out: <a href="https://trackmatcher.netlify.app/" target="_blank">trackmatcher.netlify.app/</a>
 
-## Code
+## Overview
 
-The `recommendation_model.ipynb` notebook in the `model` folder provides an in-depth explanation of how the data was loaded and how recommendation relationships between Spotify tracks were modeled using Graph Theory.
+The `model`, `api`, and `docs` folders contain code I wrote earlier this summer. The `recommendation_model.ipynb` notebook in the `model` folder provides an in-depth explanation of how recommendation relationships between Spotify tracks were modeled using Graph Theory. The `api` folder contains code for the Flask web API, which inferfaces with a SQL database. This API was deployed using AWS Elastic Beanstalk and RDS. The `docs` folder contains an old static webpage this site used.
 
-The `api` folder contains code for the Flask web API, which inferfaces with a SQL database. This API was deployed using AWS Elastic Beanstalk and RDS.
-
-The `docs` folder contains an old static webpage this site used. It is now deployed on Netlify as a Vite and React app.
+This week, I completely redid the frontend to a Vite and React app. I also interfaced the React app with my TrackMatch API, added dynamic sizing for mobile applications, and publicly deployed it on Netlify.
 
 ## Features I chose to include
 
