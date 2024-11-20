@@ -4,4 +4,4 @@
 
 ## Website
 
-Try it out: <a href="https://timliang4.github.io/TrackMatch/" target="_blank">trackmatcher.netlify.app/</a>
+Try it out: <a href="https://timliang4.github.io/TrackMatch/" target="_blank">https://timliang4.github.io/TrackMatch//</a>
