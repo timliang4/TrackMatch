@@ -5,7 +5,7 @@ import './index.css';
 
 async function getSearchData(search) {
   try {
-      const response = await fetch(`https://trackmatchapi.com/track?search=${search}`);
+      const response = await fetch(`http://trackmatch-env.eba-psasxwk3.us-east-1.elasticbeanstalk.com/track?search=${search}`);
       if (!response.ok) {
         throw new Error(`Response status: ${response.status}`);
       }
@@ -18,7 +18,7 @@ async function getSearchData(search) {
 
 async function getRecommendations(search) {
   try {
-      const response = await fetch(`https://trackmatchapi.com/music?track=${search}`);
+      const response = await fetch(`http://trackmatch-env.eba-psasxwk3.us-east-1.elasticbeanstalk.com/music?track=${search}`);
       if (!response.ok) {
         throw new Error(`Response status: ${response.status}`);
       }
