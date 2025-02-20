@@ -1,6 +1,6 @@
 # TrackMatch
 
-> Web App for discovering relationships between Spotify tracks.
+> Recommendation Algorithm for Spotify tracks.
 
 ## Code
 
