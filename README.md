@@ -11,3 +11,7 @@ The ```api``` folder contains code for the Flask web API, which inferfaces with 
 The ```public``` and ```src``` folders contain code for a React web app that allows users to search for songs in the database and find recommendations. It is no longer deployed because the API costs money to run. 
 
 Feel free to check out the code!
+
+## References
+
+[Spotify Million Playlist Dataset](https://www.kaggle.com/datasets/notshrirang/spotify-million-song-dataset)
